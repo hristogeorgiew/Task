@@ -31,6 +31,7 @@ app.use(
 
 //Routes
 app.use('/user', require('./routes/userRouter'));
+app.use('/customer', require('./routes/customerRouter'));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

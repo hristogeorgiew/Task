@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Navbar from "./components/layout/Navbar";
+import Customer from './components/Customer/Customer';
 import AuthContext from "./context/AuthContext";
 
 function Router() {
@@ -14,7 +15,9 @@ function Router() {
           <Navbar />
           <Switch>
             <Route exact path="/">
-              <div>Home</div>
+              <h1>Здравейте</h1>
+              <p>Тряба да сте си влезете в акаунта, за да търсите картинка</p>
+              <p>Ако нямате регистрация, трябва да се регистрирате</p>
             </Route>
             {loggedIn === false && (
               <>
@@ -29,7 +32,7 @@ function Router() {
             {loggedIn === true && (
               <>
                 <Route path="/customer">
-                  <div>Customers</div>
+                  <Customer />
                 </Route>
               </>
             )}

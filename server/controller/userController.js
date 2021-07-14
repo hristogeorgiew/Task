@@ -109,15 +109,14 @@ const userController = {
     loggedin: async (req, res) => {
         try {
             const token = req.cookies.token;
-
             if (!token) return res.json(false);
-            
-             jwt.verify(token, process.env.JWT_SECRET);
-            
+        
+            jwt.verify(token, process.env.JWT_SECRET);
+        
             res.send(true);
-        } catch (err) {
-            res.json(false)
-        }
+          } catch (err) {
+            res.json(false);
+          }
     },
 }
 
